@@ -1,0 +1,175 @@
+:root {
+    --primary: #651d9b; /* Requested Amethyst Purple */
+    --primary-light: #8340b8;
+    --sand: #FAF9F6;
+    --black: #1A1A1A;
+    --white: #FFFFFF;
+    --transition-luxury: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--sand);
+    overflow-x: hidden;
+    color: var(--black);
+}
+
+h1, h2, h3, h4, h5, .font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Luxury Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 3px; }
+::-webkit-scrollbar-track { background: var(--sand); }
+::-webkit-scrollbar-thumb { background: #E2E0D8; transition: background 0.3s; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+/* Navigation */
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+}
+.nav-link:hover { opacity: 1; }
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--primary);
+    transition: width 0.7s var(--transition-luxury);
+}
+.nav-link:hover::after { width: 100%; }
+
+/* Buttons & Filters */
+.filter-btn {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #AAA;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: all 0.5s var(--transition-luxury);
+}
+.filter-btn.active { color: var(--black); }
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: all 0.6s var(--transition-luxury);
+}
+.filter-btn.active::after { width: 100%; }
+
+/* Tabs Ecosystem */
+.tab-btn {
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #BBB;
+    padding: 1.5rem 0;
+    white-space: nowrap;
+    position: relative;
+    transition: color 0.5s var(--transition-luxury);
+}
+.tab-btn.active { color: var(--black); }
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.7s var(--transition-luxury);
+}
+.tab-btn.active::after { width: 100%; }
+
+.tab-pane {
+    display: none;
+    opacity: 0;
+}
+.tab-pane.active {
+    display: block;
+    animation: fadeInSlide 0.8s var(--transition-luxury) forwards;
+}
+
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Product Cards */
+.product-card {
+    transition: transform 0.8s var(--transition-luxury);
+    cursor: pointer;
+}
+.product-card:hover { transform: translateY(-10px); }
+
+/* Model Viewer Styling */
+model-viewer {
+    --poster-color: transparent;
+    --progress-bar-color: var(--primary);
+}
+
+/* Utilities */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.scroll-mask {
+    mask-image: linear-gradient(to right, black 90%, transparent 100%);
+}
+
+.toast-notification {
+    border-radius: 1px;
+    animation: luxury-shadow 2.5s infinite ease-in-out;
+    background: white;
+}
+
+@keyframes luxury-shadow {
+    0%, 100% { box-shadow: 0 20px 40px -15px rgba(101, 29, 155, 0.08); }
+    50% { box-shadow: 0 30px 60px -15px rgba(101, 29, 155, 0.12); }
+}
+
+/* Step Cards & Numbers */
+.step-card {
+    background: white;
+    padding: 3rem 2rem;
+    border: 1px solid rgba(0,0,0,0.03);
+    position: relative;
+    transition: all 0.6s var(--transition-luxury);
+}
+.step-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -20px rgba(101, 29, 155, 0.1);
+}
+.step-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--primary);
+    opacity: 0.1;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    line-height: 1;
+    transition: opacity 0.6s ease;
+}
+.step-card:hover .step-number { opacity: 0.25; }
+
+/* FAQ Styling */
+.faq-item {
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+.faq-item:hover { border-color: var(--primary); background: white; }
+
+@media (max-width: 768px) {
+    .py-40 { padding-top: 6rem; padding-bottom: 6rem; }
+}

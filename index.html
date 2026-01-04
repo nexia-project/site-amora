@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amora Essence | O Ritual do Autocuidado & Presentes Memoráveis</title>
+    
+    <!-- SEO & Performance -->
+    <link rel="preload" as="image" href="https://r2-bucket.flowith.net/f/5ce5a683d85cc4a9/aromatic_luxury_candle_hero_banner_index_0%401024x1024.jpeg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- External Tech Stack -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#FAF9F6] text-[#1A1A1A] antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-[100] transition-all duration-700 py-6" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex-1 hidden lg:flex gap-12 items-center text-[10px] tracking-[0.4em] uppercase font-bold">
+                <a href="#shop" class="nav-link">Coleções</a>
+                <a href="#universo" class="nav-link">Negócios</a>
+                <a href="#universo" class="nav-link">Universo</a>
+            </div>
+            
+            <div class="flex-shrink-0 flex flex-col items-center group cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                <div class="w-10 h-10 mb-2 flex items-center justify-center">
+                    <!-- Brand Symbol Placeholder -->
+                    <i data-lucide="sparkles" class="text-[var(--primary)] w-6 h-6 transition-transform group-hover:rotate-12"></i>
+                </div>
+                <h1 class="font-serif text-xl md:text-2xl tracking-[0.2em] uppercase text-[#1A1A1A]">
+                    Amora <span class="text-[var(--primary)]">Essence</span>
+                </h1>
+            </div>
+
+            <div class="flex-1 flex gap-10 items-center justify-end text-[10px] tracking-[0.4em] uppercase font-bold">
+                <a href="#footer" class="nav-link hidden md:block">Contato</a>
+                <div class="relative cursor-pointer group p-2" id="cart-btn">
+                    <i data-lucide="shopping-bag" class="w-5 h-5 transition-transform group-hover:scale-110"></i>
+                    <span class="absolute top-0 right-0 bg-[var(--primary)] text-white text-[8px] w-4 h-4 rounded-full flex items-center justify-center font-bold" id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative h-screen min-h-[800px] flex items-center overflow-hidden bg-[#F3F1ED]">
+        <div class="absolute inset-0 z-0 opacity-15">
+            <img src="https://r2-bucket.flowith.net/f/5ce5a683d85cc4a9/aromatic_luxury_candle_hero_banner_index_0%401024x1024.jpeg" 
+                 alt="Texture" class="w-full h-full object-cover grayscale">
+        </div>
+        
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 items-center h-full relative z-10">
+            <div class="pt-20">
+                <span class="inline-block text-[var(--primary)] font-bold tracking-[0.6em] text-[10px] uppercase mb-8 hero-anim" style="opacity:0">Artesanal • Vegano • Atemporal</span>
+                <h2 class="font-serif text-5xl md:text-7xl lg:text-8xl mb-12 leading-[0.95] hero-anim" style="opacity:0">
+                    Sinta a luz do <br><span class="italic font-normal text-[var(--primary)]">puro afeto</span>.
+                </h2>
+                <p class="text-base md:text-lg text-gray-500 font-light mb-16 max-w-md leading-relaxed hero-anim" style="opacity:0">
+                    Fragrâncias exclusivas criadas para transformar ambientes em refúgios de sofisticação e bem-estar.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-10 hero-anim" style="opacity:0">
+                    <a href="#shop" class="w-full sm:w-auto bg-[#1A1A1A] text-white px-14 py-6 text-[10px] tracking-[0.4em] font-bold uppercase rounded-[2px] hover:bg-[var(--primary)] transition-all duration-700 shadow-2xl hover:-translate-y-1 text-center">
+                        Comprar Agora
+                    </a>
+                    <a href="#universo" class="text-[10px] tracking-[0.4em] uppercase border-b border-black/20 pb-1 font-bold hover:text-[var(--primary)] hover:border-[var(--primary)] transition-all">
+                        Conhecer a Marca
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative h-full flex items-center justify-center lg:justify-end hero-anim" style="opacity:0; transform: scale(0.9)">
+                <div class="w-full max-w-[550px] aspect-square relative">
+                    <model-viewer 
+                        id="hero-3d"
+                        src="https://v3b.fal.media/files/b/0a88c60e/LFKSZTxXsy_9iEE11_hO7_model.glb" 
+                        poster="https://r2-bucket.flowith.net/f/5ce5a683d85cc4a9/aromatic_luxury_candle_hero_banner_index_0%401024x1024.jpeg"
+                        loading="eager"
+                        reveal="auto"
+                        camera-controls
+                        auto-rotate
+                        disable-zoom
+                        shadow-intensity="1.5"
+                        environment-image="neutral"
+                        exposure="1.1"
+                        class="w-full h-full outline-none drop-shadow-[0_35px_35px_rgba(101,29,155,0.1)]"
+                        alt="Vela Premium Amora Essence">
+                    </model-viewer>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4 opacity-30 hover:opacity-100 transition-opacity cursor-pointer" onclick="document.getElementById('shop').scrollIntoView()">
+            <span class="text-[8px] tracking-[0.5em] uppercase font-bold">Scroll</span>
+            <div class="w-[1px] h-16 bg-gradient-to-b from-black to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- PRODUCT SHOWCASE (RETAIL) -->
+    <section id="shop" class="py-40 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-baseline mb-24 border-b border-gray-100 pb-10">
+                <div class="max-w-2xl">
+                    <span class="text-[var(--primary)] text-[10px] font-bold tracking-[0.6em] uppercase mb-6 block">Vitrine de Varejo</span>
+                    <h3 class="font-serif text-4xl md:text-6xl mb-4">Essências que contam histórias.</h3>
+                    <p class="text-gray-400 font-light text-sm tracking-wide">Blend de ceras vegetais, óleos premium e pavio de algodão.</p>
+                </div>
+                <div class="mt-12 md:mt-0 flex flex-wrap gap-8 items-center">
+                    <button class="filter-btn active" data-category="Todos">Todos</button>
+                    <button class="filter-btn" data-category="Velas">Velas</button>
+                    <button class="filter-btn" data-category="Sprays">Home Sprays</button>
+                    <button class="filter-btn" data-category="Acessórios">Acessórios</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-28" id="product-grid">
+                <!-- Products dynamically injected via main.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- UNIVERSO AMORA -->
+    <section id="universo" class="py-40 bg-[#FAF9F6] border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-28">
+                <span class="text-[9px] tracking-[0.6em] uppercase text-[var(--primary)] font-bold block mb-6">Discovery Center</span>
+                <h3 class="font-serif text-4xl md:text-5xl mb-10">O Universo Amora Essence</h3>
+                <div class="w-20 h-[1px] bg-[var(--primary)]/30 mx-auto"></div>
+            </div>
+
+            <div class="flex justify-start lg:justify-center mb-24 gap-10 md:gap-14 overflow-x-auto no-scrollbar px-4 scroll-mask pb-4 border-b border-black/5" id="tab-nav">
+                <button class="tab-btn active" data-tab="nossa-historia">Nossa História</button>
+                <button class="tab-btn" data-tab="presentes">Presentes Personalizados</button>
+                <button class="tab-btn" data-tab="marca-propria">Marca Própria</button>
+                <button class="tab-btn" data-tab="exportacao">Exportação</button>
+                <button class="tab-btn" data-tab="nosso-processo">Nosso Processo</button>
+                <button class="tab-btn" data-tab="cuidados">Cuidados</button>
+                <button class="tab-btn" data-tab="faq">FAQ</button>
+            </div>
+
+            <div id="tab-content-wrapper" class="relative min-h-[600px]">
+                <!-- Tab: Nossa História -->
+                <div class="tab-pane active" id="nossa-historia">
+                    <div class="grid lg:grid-cols-2 gap-24 items-center">
+                        <div class="relative overflow-hidden group">
+                            <img src="https://r2-bucket.flowith.net/f/32d8021f41bba31c/aconchego_lifestyle_reading_moment_index_3%401024x1024.jpeg" 
+                                 class="w-full h-[650px] object-cover rounded-[2px] shadow-sm transition-transform duration-1000 group-hover:scale-105">
+                        </div>
+                        <div class="space-y-10">
+                            <h4 class="font-serif text-4xl lg:text-5xl leading-tight">Mãos que criam, <br>almas que sentem.</h4>
+                            <p class="text-gray-500 text-lg leading-relaxed font-light italic">
+                                "A Amora Essence não nasceu de uma planilha, mas de uma necessidade de pausa. De transformar a casa em um santuário de paz através do fogo e do aroma."
+                            </p>
+                            <p class="text-gray-500 text-base leading-relaxed font-light">
+                                Cada vela é vertida manualmente em pequenos lotes para garantir a máxima qualidade olfativa e visual. Utilizamos apenas ingredientes biodegradáveis, reforçando nosso compromisso com a natureza e com o seu bem-estar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Presentes -->
+                <div class="tab-pane" id="presentes">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="text-center mb-20">
+                            <h4 class="font-serif text-4xl lg:text-5xl mb-6">Celebrar momentos com alma.</h4>
+                            <p class="text-gray-500 max-w-2xl mx-auto font-light leading-relaxed">
+                                Criamos presentes aromáticos sob medida para que cada história seja contada através dos sentidos.
+                            </p>
+                        </div>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                            <div class="bg-white p-10 border border-black/5 hover:border-[var(--primary)]/30 transition-all group">
+                                <div class="mb-8 overflow-hidden aspect-video bg-[#F3F1ED]">
+                                    <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                                </div>
+                                <h5 class="text-[11px] font-bold uppercase tracking-[0.3em] mb-4 text-[var(--primary)]">Casamentos & Mini Weddings</h5>
+                                <p class="text-xs text-gray-400 leading-relaxed font-light mb-6">Lembrancinhas e kits de boas-vindas personalizados com a fragrância do casal.</p>
+                            </div>
+                            <div class="bg-white p-10 border border-black/5 hover:border-[var(--primary)]/30 transition-all group">
+                                <div class="mb-8 overflow-hidden aspect-video bg-[#F3F1ED]">
+                                    <img src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                                </div>
+                                <h5 class="text-[11px] font-bold uppercase tracking-[0.3em] mb-4 text-[var(--primary)]">Aniversários & Bodas</h5>
+                                <p class="text-xs text-gray-400 leading-relaxed font-light mb-6">Cestas românticas e mimos artesanais para celebrações afetivas sob medida.</p>
+                            </div>
+                            <div class="bg-white p-10 border border-black/5 hover:border-[var(--primary)]/30 transition-all group">
+                                <div class="mb-8 overflow-hidden aspect-video bg-[#F3F1ED]">
+                                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                                </div>
+                                <h5 class="text-[11px] font-bold uppercase tracking-[0.3em] mb-4 text-[var(--primary)]">15 anos & Formaturas</h5>
+                                <p class="text-xs text-gray-400 leading-relaxed font-light mb-6">Kits de autocuidado que refletem a essência da debutante ou do formando.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Marca Própria -->
+                <div class="tab-pane" id="marca-propria">
+                    <div class="grid lg:grid-cols-2 gap-24 items-center">
+                        <div class="space-y-10">
+                            <span class="text-[10px] font-bold tracking-[0.5em] text-[var(--primary)] uppercase">Private Label & Boutique</span>
+                            <h4 class="font-serif text-4xl lg:text-5xl leading-tight">Sua Marca, Nossa Essência.</h4>
+                            <p class="text-gray-500 text-base leading-relaxed font-light">
+                                Desenvolvemos projetos de <strong>Marca Própria</strong> para quem deseja oferecer produtos aromáticos exclusivos com sua própria identidade visual.
+                            </p>
+                            <div class="grid grid-cols-2 gap-6 pt-6 border-t border-black/5">
+                                <div>
+                                    <h6 class="text-[9px] font-bold uppercase tracking-[0.2em] mb-2 text-[var(--primary)]">Personalização Total</h6>
+                                    <p class="text-[11px] text-gray-400 font-light">Fragrâncias e rótulos sob demanda.</p>
+                                </div>
+                                <div>
+                                    <h6 class="text-[9px] font-bold uppercase tracking-[0.2em] mb-2 text-[var(--primary)]">Qualidade Premium</h6>
+                                    <p class="text-[11px] text-gray-400 font-light">Insumos selecionados e produção manual.</p>
+                                </div>
+                            </div>
+                            <div class="pt-8">
+                                <a href="https://wa.me/5500000000000" class="inline-block bg-[#1A1A1A] text-white px-12 py-5 text-[10px] tracking-[0.4em] font-bold uppercase rounded-[2px] hover:bg-[var(--primary)] transition-all">Iniciar Projeto</a>
+                            </div>
+                        </div>
+                        <div class="relative h-[650px]">
+                            <img src="https://images.unsplash.com/photo-1583209814613-5116e9a5a3ad?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover rounded-[2px]">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Exportação -->
+                <div class="tab-pane" id="exportacao">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="grid lg:grid-cols-3 gap-16 mb-24">
+                            <div class="lg:col-span-1">
+                                <span class="text-[10px] font-bold tracking-[0.5em] text-[var(--primary)] uppercase mb-4 block">Global Reach</span>
+                                <h4 class="font-serif text-4xl lg:text-5xl leading-tight mb-8">Exportação Internacional</h4>
+                                <p class="text-gray-500 text-sm font-light">Projetos de marca própria para o mercado exterior com acompanhamento logístico dedicado.</p>
+                            </div>
+                            <div class="lg:col-span-2 bg-white border border-black/5 p-12">
+                                <div class="grid md:grid-cols-2 gap-12">
+                                    <div class="flex gap-6"><span class="font-serif text-3xl text-gray-200">01</span><div><p class="text-[10px] font-bold uppercase tracking-widest mb-2">Briefing</p><p class="text-xs text-gray-400 font-light">Entendimento de mercado e país de destino.</p></div></div>
+                                    <div class="flex gap-6"><span class="font-serif text-3xl text-gray-200">02</span><div><p class="text-[10px] font-bold uppercase tracking-widest mb-2">Amostras</p><p class="text-xs text-gray-400 font-light">Criação de propostas de fragrâncias e design.</p></div></div>
+                                    <div class="flex gap-6"><span class="font-serif text-3xl text-gray-200">03</span><div><p class="text-[10px] font-bold uppercase tracking-widest mb-2">Produção</p><p class="text-xs text-gray-400 font-light">Fabricação artesanal com selo de qualidade Amora.</p></div></div>
+                                    <div class="flex gap-6"><span class="font-serif text-3xl text-gray-200">04</span><div><p class="text-[10px] font-bold uppercase tracking-widest mb-2">Envio</p><p class="text-xs text-gray-400 font-light">Logística segura para exportação em larga escala.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center pt-12 border-t border-black/5">
+                            <h6 class="font-serif text-2xl mb-8 italic text-[var(--primary)]">Projetos sob consulta.</h6>
+                            <a href="https://wa.me/5500000000000" class="inline-block bg-[#1A1A1A] text-white px-16 py-6 text-[10px] tracking-[0.4em] font-bold uppercase rounded-[2px] hover:bg-[var(--primary)] transition-all">Falar com Consultor</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Nosso Processo -->
+                <div class="tab-pane" id="nosso-processo">
+                    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                        <div class="step-card group"><span class="step-number">1</span><h6 class="text-[10px] font-bold uppercase tracking-[0.3em] mb-4 group-hover:text-[var(--primary)] transition-colors">Diálogo</h6><p class="text-xs text-gray-400 font-light">Entendemos seu desejo e necessidade.</p></div>
+                        <div class="step-card group"><span class="step-number">2</span><h6 class="text-[10px] font-bold uppercase tracking-[0.3em] mb-4 group-hover:text-[var(--primary)] transition-colors">Curadoria</h6><p class="text-xs text-gray-400 font-light">Seleção de essências e recipientes ideais.</p></div>
+                        <div class="step-card group"><span class="step-number">3</span><h6 class="text-[10px] font-bold uppercase tracking-[0.3em] mb-4 group-hover:text-[var(--primary)] transition-colors">Design</h6><p class="text-xs text-gray-400 font-light">Definição visual de rótulos e embalagens.</p></div>
+                        <div class="step-card group"><span class="step-number">4</span><h6 class="text-[10px] font-bold uppercase tracking-[0.3em] mb-4 group-hover:text-[var(--primary)] transition-colors">Artesanato</h6><p class="text-xs text-gray-400 font-light">Produção manual cuidadosa e perfumada.</p></div>
+                        <div class="step-card group"><span class="step-number">5</span><h6 class="text-[10px] font-bold uppercase tracking-[0.3em] mb-4 group-hover:text-[var(--primary)] transition-colors">Entrega</h6><p class="text-xs text-gray-400 font-light">O envio da experiência Amora para você.</p></div>
+                    </div>
+                </div>
+
+                <!-- Tab: Cuidados -->
+                <div class="tab-pane" id="cuidados">
+                    <div class="grid lg:grid-cols-2 gap-24 items-center">
+                        <div class="space-y-16">
+                            <h4 class="font-serif text-4xl lg:text-5xl">O Ritual de Queima.</h4>
+                            <div class="space-y-12">
+                                <div class="flex gap-10">
+                                    <span class="font-serif text-5xl text-[var(--primary)]/20 italic">01</span>
+                                    <div><h5 class="text-[10px] font-bold uppercase tracking-[0.4em] mb-4">Piscina de Cera</h5><p class="text-sm text-gray-400 font-light">Derreta até a borda para evitar túneis.</p></div>
+                                </div>
+                                <div class="flex gap-10">
+                                    <span class="font-serif text-5xl text-[var(--primary)]/20 italic">02</span>
+                                    <div><h5 class="text-[10px] font-bold uppercase tracking-[0.4em] mb-4">Apare o Pavio</h5><p class="text-sm text-gray-400 font-light">Mantenha em 5mm para uma queima limpa.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://r2-bucket.flowith.net/f/17b93266cb8502cd/candle_care_guide_macro_index_4%401024x1024.png" class="w-full h-[650px] object-cover rounded-[2px] shadow-2xl">
+                    </div>
+                </div>
+
+                <!-- Tab: FAQ -->
+                <div class="tab-pane" id="faq">
+                    <div class="max-w-4xl mx-auto space-y-4" id="faq-container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOASTS -->
+    <div id="toast-wrapper" class="fixed top-24 right-8 z-[200] flex flex-col gap-4 pointer-events-none"></div>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="relative bg-[#121212] text-white pt-40 pb-20 overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
+            <img src="https://r2-bucket.flowith.net/f/23627c09baa583f8/ethereal_smoke_background_index_5%401024x1024.jpeg" class="w-full h-full object-cover grayscale">
+        </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-20 mb-32">
+                <div>
+                    <h2 class="font-serif text-3xl mb-12 tracking-wider">Amora Essence</h2>
+                    <p class="text-gray-500 text-sm leading-relaxed font-light mb-10">Elevando o espírito através da perfumaria de nicho.</p>
+                    <div class="flex gap-8">
+                        <a href="#" class="text-gray-400 hover:text-white transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="text-[9px] font-bold uppercase tracking-[0.5em] text-[var(--primary)] mb-8">Negócios</h5>
+                    <ul class="space-y-4 text-gray-500 text-[10px] tracking-[0.3em] uppercase font-bold">
+                        <li><a href="#universo" class="hover:text-white">Marca Própria</a></li>
+                        <li><a href="#universo" class="hover:text-white">Exportação</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-[9px] font-bold uppercase tracking-[0.5em] text-[var(--primary)] mb-8">Institucional</h5>
+                    <ul class="space-y-4 text-gray-500 text-[10px] tracking-[0.3em] uppercase font-bold">
+                        <li><a href="#universo" class="hover:text-white">Nossa História</a></li>
+                        <li><a href="#universo" class="hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white/[0.03] p-10 border border-white/10">
+                    <h5 class="text-[9px] font-bold uppercase tracking-[0.5em] mb-6 text-[var(--primary)]">Newsletter</h5>
+                    <div class="flex">
+                        <input type="email" placeholder="E-MAIL" class="bg-transparent border-b border-white/20 text-[10px] py-2 w-full focus:outline-none focus:border-[var(--primary)] transition-colors">
+                        <button class="ml-4"><i data-lucide="arrow-right" class="w-4 h-4 text-[var(--primary)]"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-10 text-center text-[9px] text-gray-600 uppercase tracking-[0.5em]">
+                © 2026 Amora Essence. CNPJ 00.000.000/0001-00
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
